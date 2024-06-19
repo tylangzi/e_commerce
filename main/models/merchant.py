@@ -10,7 +10,7 @@ class Merchant(models.Model):
     logo = models.ImageField(upload_to='merchant_logos/', blank=True, null=True)
     description = RichTextField()
     address = models.CharField(max_length=200)
-    username = models.CharField(max_length=100)
+    username = models.CharField(max_length=100, unique=True)
     password = models.CharField(max_length=200)
     contact_number = models.CharField(max_length=15)
     establishment_date = models.DateTimeField(blank=True, null=True)
